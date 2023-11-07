@@ -15,9 +15,10 @@ namespace Lalasia.Controllers
             return View();
         }
 
-        public ActionResult Product()
+        public ActionResult Product(string keyword = "")
         {
-            return View(db.Furnitures.ToList());
+            //名字搜素
+            return View(db.Furnitures.Where(p=>p.Name.Contains(keyword)).ToList());
         }
 
         public ActionResult Service()

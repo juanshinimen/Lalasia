@@ -1,0 +1,55 @@
+﻿/* 版权 */
+.footer {
+    border-top: 1.5px solid rgba(236, 228, 222, 1);
+    margin-top: 80px;
+    margin-left: 100px;
+    padding-top: 80px;
+    width: 1240px;
+    height: 290px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .footer .left div {
+        margin-top: 36px;
+        width: 505px;
+        height: 64px;
+        opacity: 1;
+        /** 文本1 */
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: 32.4px;
+        color: rgba(21, 20, 17, 1);
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .footer .right {
+        display: flex;
+    }
+
+        .footer .right dl {
+            margin-left: 130px;
+        }
+
+        .footer .right dt {
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 26px;
+            left: 0px;
+            font-weight: 700;
+            color: rgba(21, 20, 17, 1);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .footer .right a {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            line-height: 32.4px;
+            color: rgba(21, 20, 17, 1);
+            text-align: left;
+            vertical-align: top;
+        }

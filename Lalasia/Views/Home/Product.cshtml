@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="~/Content/base.css">
+    <link rel="stylesheet" href="~/Content/product.css">
+</head>
+
+<body>
+    <div class="banner">
+        <h1>Products</h1>
+        <h3>We display products based on the latest products we have, if you wantto see our old products please enter the name of the item</h3>
+        <div id="slideshow-container">
+            <div class="slideshow">
+                <img src="~/Content/images/products.png" alt="Image 1">
+                <img src="~/Content/images/pp1.png" alt="Image 2">
+                <img src="~/Content/images/pp2.png" alt="Image 3">
+                <img src="~/Content/images/pp3.png" alt="Image 4">
+                <img src="~/Content/images/pp4.png" alt="Image 5">
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </div>
+    <div class="search">
+    <input type="text" class="input" placeholder="Search property" id="searchText">
+    <input type="button" value="Search" class="button" onclick="search()">
+</div>
+</body>
+</html>
+<script src="~/Scripts/lunbo.js"></script>

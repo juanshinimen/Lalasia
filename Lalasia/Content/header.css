@@ -1,0 +1,58 @@
+﻿.wrapper {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+.header {
+    margin-bottom: 100px;
+    height: 100px;
+    background-color: #fff;
+}
+
+    .header .wrapper {
+        padding-top: 29px;
+        display: flex;
+    }
+
+.logo a {
+    display: block;
+    width: 130px;
+    height: 42px;
+    background-image: url(images/logo.png);
+    font-size: 0;
+}
+
+/* 导航 */
+.nav {
+    margin-left: 260px;
+}
+
+    .nav ul {
+        display: flex;
+    }
+
+    .nav li {
+        margin-right: 60px;
+    }
+
+        .nav li a {
+            display: block;
+            padding: 6px 8px;
+            line-height: 27px;
+            font-size: 19px;
+        }
+
+            /* actvie 类选择器，表示默认选中的a */
+            .nav li .active,   /**/
+            .nav li a:hover {
+                border-bottom: 3px solid rgba(81, 133, 129, 1);
+            }
+
+.user .buy {
+    margin-left: 240px;
+    margin-right: 24px;
+}

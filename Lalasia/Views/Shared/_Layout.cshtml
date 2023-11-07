@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/base.css">
+    <link rel="stylesheet" href="~/Content/header.css">
+    <link rel="stylesheet" href="~/Content/footer.css">
+
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="wrapper">
+            <!-- logo -->
+            <div class="logo">
+                <h1><a href="#">Lalasia</a></h1>
+            </div>
+            <!-- 导航 -->
+            <div class="nav">
+                <ul>
+                    <li class="one">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="two">@Html.ActionLink("Product", "Product", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="three">@Html.ActionLink("Service", "Service", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+
+            <!-- 用户 -->
+            <div class="user">
+                <img src="~/Content/images/buy.png" alt="" class="buy">
+                <img src="~/Content/images/user.png" alt="">
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <!-- 版权区域 -->
+    <div class="footer">
+
+        <div class="left">
+            <img src="~/Content/images/logo.png" alt="">
+            <div>Lalasia is digital agency that help you make better experience iaculis cras in.</div>
+        </div>
+        <div class="right">
+            <dl>
+                <dt>Product</dt>
+                <dd><a href="#">New Arrivals</a></dd>
+                <dd><a href="#">Best Selling</a></dd>
+                <dd><a href="#">Home Decor</a></dd>
+                <dd><a href="#">Kitchen Set</a></dd>
+            </dl>
+            <dl>
+                <dt>Services</dt>
+                <dd><a href="#">Catalog</a></dd>
+                <dd><a href="#">Blog</a></dd>
+                <dd><a href="#">FaQ</a></dd>
+                <dd><a href="#">Pricing</a></dd>
+            </dl>
+            <dl>
+                <dt>Follow Us</dt>
+                <dd><a href="#">Facebook</a></dd>
+                <dd><a href="#">Instagram</a></dd>
+                <dd><a href="#">Twitter</a></dd>
+            </dl>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>      

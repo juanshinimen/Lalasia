@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lalasia.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace Lalasia.Controllers
 {
     public class HomeController : Controller
     {
+        private LalasiaContext db = new LalasiaContext();
         public ActionResult Index()
         {
             return View();
@@ -15,7 +17,7 @@ namespace Lalasia.Controllers
 
         public ActionResult Product()
         {
-            return View();
+            return View(db.Furnitures.ToList());
         }
 
         public ActionResult Service()

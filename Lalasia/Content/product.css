@@ -30,6 +30,7 @@
     text-align: center;
     vertical-align: top;
 }
+
 #slideshow-container {
     position: relative;
     width: 100%;
@@ -66,3 +67,166 @@
 .next {
     right: 10px;
 }
+
+.search {
+    width: 1030px;
+    height: 84px;
+    border: 1px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.input {
+    margin-left: 100px;
+    float: left;
+    width: 640px;
+    /*宽400*/
+    height: 84px;
+    /*高38（因为文本框内外边框要占用1像素所以总体高度减2，其他盒子同理）*/
+    outline: none;
+    border: none;
+    /*取消文本框内外边框*/
+    opacity: 1;
+    display: flex;
+    /** 文本1 */
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 32.4px;
+    /* color: rgba(175, 173, 181, 1); */
+    /* 选项框的样式得再设置下 */
+    text-align: left;
+    vertical-align: top;
+}
+
+.button {
+    float: left;
+    width: 170px;
+    height: 84px;
+    color: white;
+    background-color: rgba(81, 133, 129, 1);
+    border: none;
+    outline: none;
+    /*取消边框和外边框将按钮边框去掉*/
+    left: 986.81px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0px;
+    line-height: 23.4px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.selt {
+    display: flex;
+    margin: 30px auto;
+    margin-left: 450px;
+    /*    margin-top:20px;*/
+}
+
+    .selt div {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .selt select {
+        margin-right: 40px;
+        /* 用div的样式代替select的样式 */
+        width: 200px;
+        height: 40px;
+        border-radius: 5px;
+        /* 盒子阴影修饰作用,自己随意 */
+        box-shadow: 0 0 5px #ccc;
+        position: relative;
+        /* //清除select的边框样式 */
+        border: none;
+        /* //清除select聚焦时候的边框颜色 */
+        outline: none;
+        /* //将select的宽高等于div的宽高 */
+        line-height: 40px;
+        /* //隐藏select的下拉图标 */
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        /* //通过padding-left的值让文字居中 */
+        padding-left: 75px;
+    }
+
+    .selt #sortOrder {
+        padding-left: 50px;
+    }
+
+
+#productList table {
+    width: 1240px;
+    margin: auto;
+}
+
+
+/* Border styles */
+#productList thead, #productList tr {
+    height:100px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(81, 133, 129);
+}
+
+#productList {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(235, 242, 224);
+}
+
+    /* Padding and font style */
+    #productList td, #productList th {
+        padding: 5px 10px;
+        font-size: 18px;
+        font-family: Verdana;
+        color: rgb(149, 170, 109);
+    }
+    #productList .buy {
+        width:70px;
+        height:30px;
+        margin-left: 30px;
+        color: white;
+        background-color: rgba(81, 133, 129, 1);
+        border: none;
+        outline: none;
+        /*取消边框和外边框将按钮边框去掉*/
+    }
+
+    /* Alternating background colors */
+    #productList tr:nth-child(even) {
+        background: rgb(230, 238, 214)
+    }
+
+    #productList tr:nth-child(odd) {
+        background: #FFF
+    }
+
+    #productList .page{
+       margin-left:700px;
+       margin-top:20px;
+    }
+
+        #productList .page a {
+            margin-right:10px;
+            /** 文本1 */
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            line-height: 32.4px;
+         
+            text-align: center;
+            vertical-align: top;
+
+            justify-content: space-between;
+            padding: 5px 10px;
+          
+            font-family: Verdana;
+            color: white;
+            background-color: rgba(81, 133, 129, 1);
+            border: none;
+            outline: none;
+            margin: auto;
+        }

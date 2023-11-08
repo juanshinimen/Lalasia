@@ -32,32 +32,39 @@
     </div>
 
     @*搜索*@
-<div class="search">
-    <form action="" method="get">
-        <input type="text" name="keyword" class="input" placeholder="Search property" value="@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")" />
-        <input type="submit" value="Search" name="submit" class="button" onclick="search()">
+    <div class="search">
+        <form action="" method="get">
+            <input type="text" name="keyword" class="input" placeholder="Search property" value="@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")" />
+            <input type="submit" value="Find Now" name="submit" class="button" onclick="search()">
+        </form>
+    </div>
 
-    </form>
-    @*选项框*@
-    <select id="category" name="category">
-        <option value="">All</option>
-        <option value="Chair">Chair</option>
-        <option value="Cupboard">Cupboard</option>
-        <option value="Table">Table</option>
-        <option value="Decoration">Decoration</option>
-    </select>
-    <select id="sortOrder" name="sortOrder">
-        <option value="asc">价格升序</option>
-        <option value="desc">价格降序</option>
-    </select>
+    <div class="selt">
+
+        @*选项框*@
+        <div>Type :</div>
+        <select id="category" name="category">
+            <option value="">All</option>
+            <option value="Chair">Chair</option>
+            <option value="Cupboard">Cupboard</option>
+            <option value="Table">Table</option>
+            <option value="Decoration">Decoration</option>
+        </select>
+        <div>Price :</div>
+        <select id="sortOrder" name="sortOrder">
+            <option value="asc">Ascending order</option>
+            <option value="desc">Descending order</option>
+        </select>
+
+    </div>
 
     <div id="productList">
         @Html.Partial("_ProductList", Model)
     </div>
 
-</div>
+
 </body>
 </html>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@*<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>*@
 <script src="~/Scripts/lunbo.js"></script>
 <script src="~/Scripts/xuanxiangkuang.js"></script>

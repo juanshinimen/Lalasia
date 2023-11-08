@@ -8,6 +8,7 @@
             <th>Type</th>
             <th>Description</th>
             <th>Prices</th>
+            <th>Operation</th>
         </tr>
     </thead>
     <tbody>
@@ -18,26 +19,29 @@
                 <td>@item.Type</td>
                 <td>@item.Description</td>
                 <td>$@item.Prices</td>
+                <td><input type="submit" value="Buy Now" class="buy"></td>
             </tr>
         }
     </tbody>
 </table>
 
-@if (ViewBag.pageNum == null | ViewBag.pageNum == 0)
-{
-    <a href="?page=1&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">1</a>
-}
-@for (var i = 1; i <= ViewBag.pageNum; i++)
-{
-    <a href="?page=@i&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">@i</a>
-}
-
-@*@if (ViewBag.pageNum > 1)
+@*@if (ViewBag.pageNum == null | ViewBag.pageNum == 0)
     {
-        <div>
-            @for (int i = 1; i <= ViewBag.pageNum; i++)
-            {
-                <a href="@Url.Action("Product", "Home", new { keyword = ViewBag.keyword, category = ViewBag.category, sortOrder = ViewBag.sortOrder, page = i })">@i</a>
-            }
-        </div>
+        <a href="?page=1&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">1</a>
+    }
+    @for (var i = 1; i <= ViewBag.pageNum; i++)
+    {
+        <a href="?page=@i&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">@i</a>
     }*@
+
+
+@if (ViewBag.pageNum > 1)
+{
+    
+    <div class="page">
+        @for (int i = 1; i <= ViewBag.pageNum; i++)
+        {
+            <a href="@Url.Action("Product", "Home", new { keyword = ViewBag.keyword, category = ViewBag.category, sortOrder = ViewBag.sortOrder, page = i })">@i</a>
+        }
+    </div>
+}

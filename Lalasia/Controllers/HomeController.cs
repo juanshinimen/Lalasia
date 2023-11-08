@@ -17,36 +17,61 @@ namespace Lalasia.Controllers
         {
             return View();
         }
-        //Page是页码数默认是第一页
-        public ActionResult Product(string keyword = "",int page = 1)
+        public ActionResult Product(string keyword = "", string category = "",string sortOrder = "asc", int page = 1)
         {
-            //名字搜素
             int pageSize = 5;
-            IEnumerable<Furniture> list = db.Furnitures.Where(p => p.Name.Contains(keyword)).ToList();
-            //分页核心代码
-            int recordCount = list.Count();
-            list = list.Skip((page - 1) * pageSize).Take(pageSize);
+            var query = db.Furnitures.AsQueryable();
+
+
+
+            if (!string.IsNullOrEmpty(category))
+            {
+                query = query.Where(p => p.Type == category);
+            }
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                query = query.Where(p => p.Name.Contains(keyword));
+            }
+            if (!string.IsNullOrEmpty(sortOrder))
+            {
+                if (sortOrder == "asc")
+                {
+                    query = query.OrderBy(p => p.Prices);
+                }
+                else
+                {
+                    query = query.OrderByDescending(p => p.Prices);
+                }
+            }
+
+            int recordCount = query.Count();
+            var list = query.Skip((page - 1) * pageSize).Take(pageSize).ToList();
             ViewBag.pageNum = Math.Ceiling((Convert.ToDecimal(recordCount)) / (Convert.ToDecimal(pageSize)));
-            return View(list);
-            //return View(db.Furnitures.Where(p=>p.Name.Contains(keyword)).ToList());
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_ProductList", list);
+            }
+            else
+            {
+                return View(list);
+            }
         }
-        //public ActionResult Index(int? page)
+
+
+        ////Page是页码数默认是第一页
+        //public ActionResult Product(string keyword = "", string sortOrder = "asc",int page = 1)
         //{
-        //    int pageSize = 5; // 每页显示的记录数
-        //    int pageNumber = (page ?? 1); // 当前页码
-
-        //    var model = db.Furnitures.OrderBy(p => p.Id)
-        //                           .Skip((pageNumber - 1) * pageSize)
-        //                           .Take(pageSize)
-        //                           .ToList();
-
-        //    ViewBag.TotalCount = db.Furnitures.Count(); // 总记录数
-        //    ViewBag.PageSize = pageSize; // 每页显示的记录数
-        //    ViewBag.PageNumber = pageNumber; // 当前页码
-
-        //    return View(model);
+        //    //名字搜素
+        //    int pageSize = 5;
+        //    IEnumerable<Furniture> list = db.Furnitures.Where(p => p.Name.Contains(keyword)).ToList();
+        //    //分页核心代码
+        //    int recordCount = list.Count();
+        //    list = list.Skip((page - 1) * pageSize).Take(pageSize);
+        //    ViewBag.pageNum = Math.Ceiling((Convert.ToDecimal(recordCount)) / (Convert.ToDecimal(pageSize)));
+        //    return View(list);
         //}
-
         public ActionResult Service()
         {
             return View();

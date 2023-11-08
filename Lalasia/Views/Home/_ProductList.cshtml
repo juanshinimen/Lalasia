@@ -1,0 +1,43 @@
+﻿
+@model List<Lalasia.Models.Furniture>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Prices</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Type</td>
+                <td>@item.Description</td>
+                <td>$@item.Prices</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (ViewBag.pageNum == null | ViewBag.pageNum == 0)
+{
+    <a href="?page=1&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">1</a>
+}
+@for (var i = 1; i <= ViewBag.pageNum; i++)
+{
+    <a href="?page=@i&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">@i</a>
+}
+
+@*@if (ViewBag.pageNum > 1)
+    {
+        <div>
+            @for (int i = 1; i <= ViewBag.pageNum; i++)
+            {
+                <a href="@Url.Action("Product", "Home", new { keyword = ViewBag.keyword, category = ViewBag.category, sortOrder = ViewBag.sortOrder, page = i })">@i</a>
+            }
+        </div>
+    }*@

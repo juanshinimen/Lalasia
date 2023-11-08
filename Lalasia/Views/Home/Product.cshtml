@@ -31,76 +31,33 @@
         </div>
     </div>
 
-
     @*搜索*@
 <div class="search">
     <form action="" method="get">
         <input type="text" name="keyword" class="input" placeholder="Search property" value="@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")" />
         <input type="submit" value="Search" name="submit" class="button" onclick="search()">
-        <select>
-            <option value="">All</option>
-            <option value="">Chair</option>
-            <option value="">Cupboard</option>
-            <option value="">Table</option>
-            <option value="">Decoration</option>
-        </select>
-        <select>
-            <option>价格升序</option>
-            <option>价格降序</option>
-        </select>
+
     </form>
+    @*选项框*@
+    <select id="category" name="category">
+        <option value="">All</option>
+        <option value="Chair">Chair</option>
+        <option value="Cupboard">Cupboard</option>
+        <option value="Table">Table</option>
+        <option value="Decoration">Decoration</option>
+    </select>
+    <select id="sortOrder" name="sortOrder">
+        <option value="asc">价格升序</option>
+        <option value="desc">价格降序</option>
+    </select>
 
-    @*列表*@
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Prices)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Type)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    $@Html.DisplayFor(modelItem => item.Prices)
-                </td>
-            </tr>
-        }
-
-    </table>
-
-    <center>
-        @*fenye*@
-        @if (ViewBag.pageNum == null | ViewBag.pageNum == 0)
-        {
-            <a href="?page=1&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">1</a>
-        }
-        @for (var i = 1; i <= ViewBag.pageNum; i++)
-        {
-            <a href="?page=@i&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">@i</a>
-        }
-    </center>
+    <div id="productList">
+        @Html.Partial("_ProductList", Model)
+    </div>
 
 </div>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="~/Scripts/lunbo.js"></script>
+<script src="~/Scripts/xuanxiangkuang.js"></script>

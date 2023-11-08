@@ -35,13 +35,22 @@
     @*搜索*@
 <div class="search">
     <form action="" method="get">
-        <input type="text" name ="keyword"class="input" placeholder="Search property"value="@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")"/>
-        <input type="submit" value="Search" name ="submit"class="button" onclick="search()">
+        <input type="text" name="keyword" class="input" placeholder="Search property" value="@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")" />
+        <input type="submit" value="Search" name="submit" class="button" onclick="search()">
+        <select>
+            <option value="">All</option>
+            <option value="">Chair</option>
+            <option value="">Cupboard</option>
+            <option value="">Table</option>
+            <option value="">Decoration</option>
+        </select>
+        <select>
+            <option>价格升序</option>
+            <option>价格降序</option>
+        </select>
     </form>
-    
-    @*
-        列表
-    *@
+
+    @*列表*@
     <table class="table">
         <tr>
             <th>
@@ -72,12 +81,25 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Prices)
+                    $@Html.DisplayFor(modelItem => item.Prices)
                 </td>
             </tr>
         }
 
     </table>
+
+    <center>
+        @*fenye*@
+        @if (ViewBag.pageNum == null | ViewBag.pageNum == 0)
+        {
+            <a href="?page=1&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">1</a>
+        }
+        @for (var i = 1; i <= ViewBag.pageNum; i++)
+        {
+            <a href="?page=@i&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">@i</a>
+        }
+    </center>
+
 </div>
 </body>
 </html>

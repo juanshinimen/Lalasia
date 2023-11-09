@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    @*Photo Rotation*@
     <div class="banner">
         <h1>Products</h1>
         <h3>We display products based on the latest products we have, if you wantto see our old products please enter the name of the item</h3>
@@ -31,7 +32,7 @@
         </div>
     </div>
 
-    @*搜索*@
+    @*search function*@
     <div class="search">
         <form action="" method="get">
             <input type="text" name="keyword" class="input" placeholder="Search property" value="@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")" />
@@ -41,7 +42,7 @@
 
     <div class="selt">
 
-        @*选项框*@
+        @*options box*@
         <div>Type :</div>
         <select id="category" name="category">
             <option value="">All</option>
@@ -58,13 +59,13 @@
 
     </div>
 
+    @*Product Forms*@
+    @*distribution page*@
     <div id="productList">
         @Html.Partial("_ProductList", Model)
     </div>
 
-
 </body>
 </html>
-@*<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>*@
-<script src="~/Scripts/lunbo.js"></script>
-<script src="~/Scripts/xuanxiangkuang.js"></script>
+<script src="@Url.Content("~/Scripts/lunbo.js")"></script>
+<script src="@Url.Content("~/Scripts/xuanxiangkuang.js")"></script>

@@ -2,6 +2,7 @@
 using Lalasia.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -17,35 +18,40 @@ namespace Lalasia.Controllers
 
         public ActionResult Index()
         {
-            var shows = dbs.Shows.ToList(); // 从数据库中获取Show模型的数据
-            return View(shows); // 将数据传递给视图
+            var shows = dbs.Shows.ToList(); // Getting data from the database for the Show model
+            return View(shows); // Passing data to the view
         }
         public ActionResult Product(string keyword = "", string category = "",string sortOrder = "asc", int page = 1)
         {
+            //keyword is data in the search box
+            //category is type
+            //sortOrder is price sorting
             int pageSize = 5;
             var query = db.Furnitures.AsQueryable();
-
+            //determine the type
             if (!string.IsNullOrEmpty(category))
             {
                 query = query.Where(p => p.Type == category);
             }
-
+            //determine the name
             if (!string.IsNullOrEmpty(keyword))
             {
                 query = query.Where(p => p.Name.Contains(keyword));
             }
+
             if (!string.IsNullOrEmpty(sortOrder))
             {
-                if (sortOrder == "asc")
+                if (sortOrder == "asc")//low to high
                 {
                     query = query.OrderBy(p => p.Prices);
                 }
-                else
+                else                  //high to low
                 {
                     query = query.OrderByDescending(p => p.Prices);
                 }
             }
-
+            //Paging Functions
+            
             int recordCount = query.Count();
             var list = query.Skip((page - 1) * pageSize).Take(pageSize).ToList();
             ViewBag.pageNum = Math.Ceiling((Convert.ToDecimal(recordCount)) / (Convert.ToDecimal(pageSize)));
@@ -60,6 +66,7 @@ namespace Lalasia.Controllers
             }
         }
 
+        //Accepting data from the home page search box
         [HttpPost]
         public ActionResult Product(string keyword,int page = 1)
         {
@@ -101,20 +108,6 @@ namespace Lalasia.Controllers
                 return View(list);
             }
         }
-
-
-        ////Page是页码数默认是第一页
-        //public ActionResult Product(string keyword = "", int page = 1)
-        //{
-        //    //名字搜素
-        //    int pageSize = 5;
-        //    IEnumerable<Furniture> list = db.Furnitures.Where(p => p.Name.Contains(keyword)).ToList();
-        //    //分页核心代码
-        //    int recordCount = list.Count();
-        //    list = list.Skip((page - 1) * pageSize).Take(pageSize);
-        //    ViewBag.pageNum = Math.Ceiling((Convert.ToDecimal(recordCount)) / (Convert.ToDecimal(pageSize)));
-        //    return View(list);
-        //}
         public ActionResult Service()
         {
             return View();

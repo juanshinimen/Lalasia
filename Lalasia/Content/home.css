@@ -2,8 +2,6 @@
     margin-left: 358px;
     width: 724px;
     height: 166px;
-    opacity: 1;
-    /** 文本1 */
     font-size: 64px;
     font-weight: 700;
     letter-spacing: 0px;
@@ -19,8 +17,6 @@
     margin-bottom: 50px;
     width: 796px;
     height: 96px;
-    opacity: 1;
-    /** 文本1 */
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 0px;
@@ -40,21 +36,15 @@
 .input {
     float: left;
     width: 640px;
-    /*宽400*/
     height: 84px;
-    /*高38（因为文本框内外边框要占用1像素所以总体高度减2，其他盒子同理）*/
     outline: none;
     border: none;
-    /*取消文本框内外边框*/
-    opacity: 1;
+    /* Remove the inner and outer borders of the text box */
     display: flex;
-    /** 文本1 */
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 0px;
     line-height: 32.4px;
-    /* color: rgba(175, 173, 181, 1); */
-    /* 选项框的样式得再设置下 */
     text-align: left;
     vertical-align: top;
 }
@@ -67,8 +57,7 @@
     background-color: rgba(81, 133, 129, 1);
     border: none;
     outline: none;
-    /*取消边框和外边框将按钮边框去掉*/
-    left: 986.81px;
+    /* Remove borders and outer borders to remove button borders */
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0px;
@@ -81,18 +70,14 @@
     margin-left: 100px;
     width: 1240px;
     height: 480px;
-    opacity: 1;
 }
-
-.benefits h5
- {
+/*benefits area*/
+.benefits h5 {
     margin-left: 680px;
     margin-top: 100px;
     width: 72px;
     height: 23px;
-    opacity: 1;
     display: flex;
-    /** 文本1 */
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0px;
@@ -108,9 +93,7 @@
     margin-top: 14px;
     width: 427px;
     height: 114px;
-    opacity: 1;
     display: flex;
-    /** 文本1 */
     font-size: 44px;
     font-weight: 700;
     letter-spacing: 0px;
@@ -130,7 +113,6 @@
     margin-right: 29px;
     width: 394px;
     height: 285px;
-    opacity: 1;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 4px 100px rgba(175, 173, 181, 0.1);
 }
@@ -141,7 +123,6 @@
     width: 62px;
     height: 62px;
     border-radius: 50%;
-    opacity: 1;
     background: rgba(249, 249, 249, 1);
 }
 
@@ -150,7 +131,6 @@
         margin-top: 16px;
         width: 30px;
         height: 30px;
-        opacity: 1;
     }
 
 .benefits .text1 {
@@ -158,8 +138,6 @@
     margin-top: 24px;
     width: 346px;
     height: 31px;
-    opacity: 1;
-    /** 文本1 */
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 0px;
@@ -174,8 +152,6 @@
     margin-top: 20px;
     width: 346px;
     height: 96px;
-    opacity: 1;
-    /** 文本1 */
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 0px;
@@ -184,14 +160,13 @@
     text-align: left;
     vertical-align: top;
 }
+ /*show products area*/
 .showproduct h5 {
     margin-left: 680px;
     margin-top: 100px;
     width: 72px;
     height: 23px;
-    opacity: 1;
     display: flex;
-    /** 文本1 */
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0px;
@@ -206,9 +181,7 @@
     margin-top: 14px;
     width: 427px;
     height: 114px;
-    opacity: 1;
     display: flex;
-    /** 文本1 */
     font-size: 44px;
     font-weight: 700;
     letter-spacing: 0px;

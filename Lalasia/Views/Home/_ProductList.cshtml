@@ -25,19 +25,9 @@
     </tbody>
 </table>
 
-@*@if (ViewBag.pageNum == null | ViewBag.pageNum == 0)
-    {
-        <a href="?page=1&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">1</a>
-    }
-    @for (var i = 1; i <= ViewBag.pageNum; i++)
-    {
-        <a href="?page=@i&keyword=@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")">@i</a>
-    }*@
-
-
 @if (ViewBag.pageNum > 1)
 {
-    
+
     <div class="page">
         @for (int i = 1; i <= ViewBag.pageNum; i++)
         {

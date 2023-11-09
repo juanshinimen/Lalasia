@@ -11,14 +11,14 @@
 </head>
 
 <body>
-    <!-- header -->
+     @*header*@ 
     <div class="header">
         <div class="wrapper">
-            <!-- logo -->
+            @*logo*@
             <div class="logo">
                 <h1><a href="#">Lalasia</a></h1>
             </div>
-            <!-- 导航 -->
+            @*navigator*@
             <div class="nav">
                 <ul>
                     <li class="one">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
@@ -27,7 +27,7 @@
                 </ul>
             </div>
 
-            <!-- 用户 -->
+             @*user*@ 
             <div class="user">
                 <img src="~/Content/images/buy.png" alt="" class="buy">
                 <img src="~/Content/images/user.png" alt="">
@@ -35,22 +35,15 @@
         </div>
     </div>
     @RenderBody()
-    <!-- 版权区域 -->
+     @*footer*@ 
     <div class="footer">
 
         <div class="left">
-            <img src="~/Content/images/logo.png" alt="">
+            <img src="~/Content/images/logo.png" alt="logo">
             <div class="L">Lalasia is digital agency that help you make better experience iaculis cras in.</div>
             <a href="mailto:hs2389546325@163.com/harpe">hs2389546325@163.com</a>
         </div>
         <div class="right">
-            @*<dl>
-                <dt>Product</dt>
-                <dd><a href="#">New Arrivals</a></dd>
-                <dd><a href="#">Best Selling</a></dd>
-                <dd><a href="#">Home Decor</a></dd>
-                <dd><a href="#">Kitchen Set</a></dd>
-            </dl>*@
             <dl>
                 <dt>Services</dt>
                 <dd><a href="https://localhost:44388/Home/Product">Product</a></dd>

@@ -23,13 +23,14 @@
             a high quality of life. Each of our products is designed to meet
             the needs of individual life.
         </h3>
+        @*search function*@
         <form action="@Url.Action("Product", "Home")" method="post">
             <div class="search">
                 <input type="text" class="input" name="keyword" placeholder="Search property" value="@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")" />
                 <input type="submit" value="Search" class="button" onclick="search()">
             </div>
         </form>
-        <img src="~/Content/images/backgroud.png" alt="">
+        <img src="~/Content/images/backgroud.png" alt="backgroud">
     </div>
 
     <div class="benefits">
@@ -38,7 +39,7 @@
         <ul>
             <li>
                 <div class="pic">
-                    <img src="~/Content/images/t1.png" alt="">
+                    <img src="~/Content/images/t1.png" alt="t1">
                 </div>
                 <h3 class="text1">Many Choices</h3>
                 <div class="text2">
@@ -48,7 +49,7 @@
             </li>
             <li>
                 <div class="pic">
-                    <img src="~/Content/images/t2.png" alt="">
+                    <img src="~/Content/images/t2.png" alt="t2">
                 </div>
                 <h3 class="text1">Fast and On Time</h3>
                 <div class="text2">
@@ -58,7 +59,7 @@
             </li>
             <li>
                 <div class="pic">
-                    <img src="~/Content/images/t3.png" alt="">
+                    <img src="~/Content/images/t3.png" alt="t3">
                 </div>
                 <h3 class="text1">Affordable Price</h3>
                 <div class="text2">
@@ -73,28 +74,21 @@
         <h2>Our popular product show</h2>
         <ul>
             <li class="pic">
-                
-                    <img src="~/Content/images/show1.png" alt="">
-
-              
+                <img src="~/Content/images/show1.png" alt="show1">
             </li>
             <li class="pic">
-                
-                    <img src="~/Content/images/show2.png" alt="">
-              
+                <img src="~/Content/images/show2.png" alt="show2">
             </li>
             <li class="pic">
-             
-                    <img src="~/Content/images/show3.png" alt="">
-               
-
+                <img src="~/Content/images/show3.png" alt="show3">
             </li>
         </ul>
+        @*Use a loop to output data from a database where models is "show".*@
         <ul class="shown">
             @foreach (var show in Model)
             {
                 <li>
-                    <p class ="typ">@show.Type</p>
+                    <p class="typ">@show.Type</p>
                     <h3>@show.Name</h3>
                     <p class="des">@show.Description</p>
                     <p class="prc">@show.Prices</p>

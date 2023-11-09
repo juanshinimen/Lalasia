@@ -1,19 +1,18 @@
-﻿// 监听选项框的change事件
+﻿// Listen for the change event of the category select box
 document.getElementById('category').addEventListener('change', function () {
-    // 获取选项框的值
+    // Get the values from the input and select boxes
     var keyword = document.querySelector('input[name="keyword"]').value;
     var category = document.getElementById('category').value;
     var sortOrder = document.getElementById('sortOrder').value;
 
-    // 使用Ajax向控制器发送数据
+    // Send data to the controller using Ajax
     $.ajax({
         url: '/Home/Product',
         type: 'GET',
         data: { keyword: keyword, category: category, sortOrder: sortOrder, page: 1 },
         success: function (result) {
+            // Handle the data returned from the controller
             document.getElementById('productList').innerHTML = result;
-            //document.getElementById('table').innerHTML = result;
-            // 处理从控制器返回的数据
         },
         error: function (error) {
             console.error('Error:', error);
@@ -21,21 +20,21 @@ document.getElementById('category').addEventListener('change', function () {
     });
 });
 
+// Listen for the change event of the sortOrder select box
 document.getElementById('sortOrder').addEventListener('change', function () {
-    // 获取选项框的值
+    // Get the values from the input and select boxes
     var keyword = document.querySelector('input[name="keyword"]').value;
     var category = document.getElementById('category').value;
     var sortOrder = document.getElementById('sortOrder').value;
 
-    // 使用Ajax向控制器发送数据
+    // Send data to the controller using Ajax
     $.ajax({
         url: '/Home/Product',
         type: 'GET',
         data: { keyword: keyword, category: category, sortOrder: sortOrder, page: 1 },
         success: function (result) {
+            // Handle the data returned from the controller
             document.getElementById('productList').innerHTML = result;
-            //document.getElementById('table').innerHTML = result;
-            // 处理从控制器返回的数据
         },
         error: function (error) {
             console.error('Error:', error);
@@ -43,5 +42,5 @@ document.getElementById('sortOrder').addEventListener('change', function () {
     });
 });
 
-// 页面加载时立即更新产品列表
+// Immediately update the product list when the page loads
 updateTable();

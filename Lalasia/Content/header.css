@@ -26,7 +26,7 @@ body {
     font-size: 0;
 }
 
-/* 导航 */
+/* Navigation */
 .nav {
     margin-left: 260px;
 }
@@ -46,8 +46,8 @@ body {
             font-size: 19px;
         }
 
-            /* actvie 类选择器，表示默认选中的a */
-            .nav li .active,   /**/
+            /* actvie class selector, indicating the default selected a */
+            .nav li .active,   
             .nav li a:hover {
                 border-bottom: 3px solid rgba(81, 133, 129, 1);
             }

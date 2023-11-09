@@ -22,12 +22,10 @@
             a high quality of life. Each of our products is designed to meet
             the needs of individual life.
         </h3>
-        <form action="@Url.Action("Product", "Home")" method="post">
-            <div class="search">
-                <input type="text" class="input" name="keyword" placeholder="Search property" value="@(Request.QueryString["keyword"] != null ? Request.QueryString["keyword"]:"")" />
-                <input type="submit" value="Search" class="button" onclick="search()">
-            </div>
-        </form>
+        <div class="search">
+            <input type="text" class="input" placeholder="Search property">
+            <input type="button" value="Search" class="button">
+        </div>
         <img src="~/Content/images/backgroud.png" alt="">
     </div>
 
@@ -66,11 +64,6 @@
                 </div>
             </li>
         </ul>
-    </div>
-
-    <div class="show">
-        <h5>Product</h5>
-        <h2>Our popular product show</h2>
     </div>
 </body>
 

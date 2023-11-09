@@ -84,8 +84,7 @@
     opacity: 1;
 }
 
-.benefits h5
- {
+.benefits h5 {
     margin-left: 680px;
     margin-top: 100px;
     width: 72px;
@@ -102,8 +101,7 @@
     vertical-align: top;
 }
 
-.benefits h2
-{
+.benefits h2 {
     margin-left: 496px;
     margin-top: 14px;
     width: 427px;
@@ -181,40 +179,6 @@
     letter-spacing: 0px;
     line-height: 32.4px;
     color: rgba(175, 173, 181, 1);
-    text-align: left;
-    vertical-align: top;
-}
-
-.show h5 {
-    margin-left: 680px;
-    margin-top: 100px;
-    width: 72px;
-    height: 23px;
-    opacity: 1;
-    display: flex;
-    /** 文本1 */
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0px;
-    line-height: 23.4px;
-    color: rgba(255, 178, 63, 1);
-    text-align: left;
-    vertical-align: top;
-}
-
-.show h2 {
-    margin-left: 496px;
-    margin-top: 14px;
-    width: 427px;
-    height: 114px;
-    opacity: 1;
-    display: flex;
-    /** 文本1 */
-    font-size: 44px;
-    font-weight: 700;
-    letter-spacing: 0px;
-    line-height: 57.2px;
-    color: rgba(21, 20, 17, 1);
     text-align: left;
     vertical-align: top;
 }

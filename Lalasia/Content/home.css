@@ -184,8 +184,7 @@
     text-align: left;
     vertical-align: top;
 }
-
-.show h5 {
+.showproduct h5 {
     margin-left: 680px;
     margin-top: 100px;
     width: 72px;
@@ -202,7 +201,7 @@
     vertical-align: top;
 }
 
-.show h2 {
+.showproduct h2 {
     margin-left: 496px;
     margin-top: 14px;
     width: 427px;
@@ -217,4 +216,16 @@
     color: rgba(21, 20, 17, 1);
     text-align: left;
     vertical-align: top;
+}
+
+.showproduct ul {
+    margin-top: 50px;
+    margin-left: 100px;
+    display: flex;
+}
+
+.showproduct li {
+    width: 394px;
+    height: 544px;
+    margin-right: 30px;
 }

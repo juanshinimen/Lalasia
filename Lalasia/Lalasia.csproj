@@ -134,6 +134,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Furniture.cs" />
+    <Compile Include="Models\Show.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +167,9 @@
     <Content Include="Content\images\pp4.png" />
     <Content Include="Content\images\products.png" />
     <Content Include="Content\images\service.png" />
+    <Content Include="Content\images\show1.png" />
+    <Content Include="Content\images\show2.png" />
+    <Content Include="Content\images\show3.png" />
     <Content Include="Content\images\t1.png" />
     <Content Include="Content\images\t2.png" />
     <Content Include="Content\images\t3.png" />

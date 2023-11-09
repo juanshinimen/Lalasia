@@ -11,18 +11,19 @@ namespace Lalasia.Controllers
 {
     public class HomeController : Controller
     {
+        
         private LalasiaContext db = new LalasiaContext();
+        private ShowContext dbs = new ShowContext();
 
         public ActionResult Index()
         {
-            return View();
+            var shows = dbs.Shows.ToList(); // 从数据库中获取Show模型的数据
+            return View(shows); // 将数据传递给视图
         }
         public ActionResult Product(string keyword = "", string category = "",string sortOrder = "asc", int page = 1)
         {
             int pageSize = 5;
             var query = db.Furnitures.AsQueryable();
-
-
 
             if (!string.IsNullOrEmpty(category))
             {

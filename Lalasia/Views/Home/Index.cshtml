@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Lalasia.Models.Show>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -67,29 +68,41 @@
             </li>
         </ul>
     </div>
-    <div class = "showproduct">
+    <div class="showproduct">
         <h5>Product</h5>
         <h2>Our popular product show</h2>
         <ul>
-            <li>
-                <div class="pic">
+            <li class="pic">
+                
                     <img src="~/Content/images/show1.png" alt="">
-                </div>
+
+              
             </li>
-            <li>
-                <div class="pic">
+            <li class="pic">
+                
                     <img src="~/Content/images/show2.png" alt="">
-                </div>
+              
             </li>
-            <li>
-                <div class="pic">
+            <li class="pic">
+             
                     <img src="~/Content/images/show3.png" alt="">
-                </div>
+               
 
             </li>
         </ul>
-    </div>
+        <ul class="shown">
+            @foreach (var show in Model)
+            {
+                <li>
+                    <p class ="typ">@show.Type</p>
+                    <h3>@show.Name</h3>
+                    <p class="des">@show.Description</p>
+                    <p class="prc">@show.Prices</p>
+                </li>
+            }
+        </ul>
 
+    </div>
 </body>
 
 </html>      

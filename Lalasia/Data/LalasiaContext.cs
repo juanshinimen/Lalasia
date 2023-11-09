@@ -20,6 +20,6 @@ namespace Lalasia.Data
         }
 
         public System.Data.Entity.DbSet<Lalasia.Models.Furniture> Furnitures { get; set; }
-
+        public object Shows { get; internal set; }
     }
 }

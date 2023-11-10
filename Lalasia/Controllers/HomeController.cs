@@ -70,43 +70,18 @@ namespace Lalasia.Controllers
         [HttpPost]
         public ActionResult Product(string keyword,int page = 1)
         {
-            string category = "";
-            string sortOrder = "asc";
             int pageSize = 5;
             var query = db.Furnitures.AsQueryable();
-            if (!string.IsNullOrEmpty(category))
-            {
-                query = query.Where(p => p.Type == category);
-            }
-
             if (!string.IsNullOrEmpty(keyword))
             {
                 query = query.Where(p => p.Name.Contains(keyword));
             }
-            if (!string.IsNullOrEmpty(sortOrder))
-            {
-                if (sortOrder == "asc")
-                {
-                    query = query.OrderBy(p => p.Prices);
-                }
-                else
-                {
-                    query = query.OrderByDescending(p => p.Prices);
-                }
-            }
-
+            query = query.OrderBy(p => p.Prices);
+           
             int recordCount = query.Count();
             var list = query.Skip((page - 1) * pageSize).Take(pageSize).ToList();
             ViewBag.pageNum = Math.Ceiling((Convert.ToDecimal(recordCount)) / (Convert.ToDecimal(pageSize)));
-
-            if (Request.IsAjaxRequest())
-            {
-                return PartialView("_ProductList", list);
-            }
-            else
-            {
-                return View(list);
-            }
+            return View(list);
         }
         public ActionResult Service()
         {
